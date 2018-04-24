@@ -22,7 +22,6 @@ int main(){
   double x=0;
   double delta_x_cuadrado = delta_x * delta_x;
   int nx = (x_max-x_min)/delta_x + 1;
-  int nt = T/delta_t +1; 
   double *u_nuevo;
   double *u_viejo;
   double *u_ini;
@@ -33,7 +32,7 @@ int main(){
   u_in(u_viejo,delta_x,x_min, nx, sigma,media,x);
 
  
-  for(int j=1;j<nt;j++){
+  while(u_viejo[nx/2]>0.5){
     u_nuevo[0]=0;
     u_nuevo[nx-1]=0;
     
